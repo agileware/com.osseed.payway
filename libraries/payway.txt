@@ -1,0 +1,157 @@
+Q17533_PUB_nsybkfid8e2ubgsq8jbuat4xugk3tj8gwpuiuvb7v979ikfzx2dpcq4izyrb
+
+curl -i --basic --user "Q17533_PUB_nsybkfid8e2ubgsq8jbuat4xugk3tj8gwpuiuvb7v979ikfzx2dpcq4izyrb:" https://api.payway.com.au/rest/v1
+
+
+https://api.payway.com.au/rest/v1
+
+get token
+https://api.payway.com.au/rest/v1/single-use-tokens
+
+curl -i --basic --user "Q17533_PUB_nsybkfid8e2ubgsq8jbuat4xugk3tj8gwpuiuvb7v979ikfzx2dpcq4izyrb:" https://api.payway.com.au/rest/v1/single-use-tokens
+
+
+curl -i --basic --user "Q17533_PUB_nsybkfid8e2ubgsq8jbuat4xugk3tj8gwpuiuvb7v979ikfzx2dpcq4izyrb:" -d "paymentMethod=creditCard&cardNumber=4564710000000004&cardholderName=TEST&cvn=847&expiryDateMonth=02&expiryDateYear=29" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://api.payway.com.au/rest/v1/single-use-tokens
+
+
+customer.username=FIREFLY&customer.orderNumber=2ef2ddded7&paymentMethod=creditCard&cardNumber=4564710000000004&cardholderName=Test+Person&cvn=847&expiryDateMonth=2&expiryDateYear=29
+
+
+"paymentMethod=creditCard&
+cardNumber=4564710000000004&
+cardholderName=TEST&
+cvn=847&
+expiryDateMonth=02&
+expiryDateYear=29"
+
+
+https://api.payway.com.au/rest/v1/single-use-tokens
+
+
+{
+  "singleUseTokenId" : "c7004471-2815-40dc-9c50-8023165bf586",
+  "paymentMethod" : "creditCard",
+  "creditCard" : {
+    "maskedCardNumber" : "456471...004",
+    "expiryDateMonth" : "02",
+    "expiryDateYear" : "29",
+    "cardScheme" : "visa",
+    "cardholderName" : "TEST",
+    "surchargePercentage" : 0.000
+  }
+}
+
+Idempotency-Key: a1b22c16-4870-428c-a199-6203cbec7290
+uuid
+
+Content-Type: application/x-www-form-urlencoded
+
+
+Encryption Key:	3Q7esWK4PLL4KWdisUMxeA==
+Username:	Q17533
+Password:	Np5xnjyfd
+
+
+SUCCESS
+
+
+Array
+(
+    [code] => 201
+    [response] => stdClass Object
+        (
+            [transactionId] => 2667040226
+            [receiptNumber] => 2667040226
+            [status] => approved
+            [responseCode] => 08
+            [responseText] => Honour with identification
+            [transactionType] => payment
+            [customerNumber] => 880107D195
+            [customerName] => Test Person
+            [orderNumber] => 880107d195
+            [currency] => aud
+            [principalAmount] => 209.4
+            [surchargeAmount] => 0
+            [paymentAmount] => 209.4
+            [paymentMethod] => creditCard
+            [creditCard] => stdClass Object
+                (
+                    [cardNumber] => 456471...004
+                    [expiryDateMonth] => 02
+                    [expiryDateYear] => 29
+                    [cardScheme] => visa
+                    [cardholderName] => Test Person
+                )
+
+            [merchant] => stdClass Object
+                (
+                    [merchantId] => TEST
+                    [merchantName] => Test Merchant
+                    [links] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [rel] => self
+                                    [href] => https://api.payway.com.au/rest/v1/merchants/TEST
+                                )
+
+                        )
+
+                )
+
+            [transactionDateTime] => 28 Mar 2020 19:07 AEDT
+            [settlementDate] => 29 Mar 2020
+            [isVoidable] => 1
+            [isRefundable] => 
+            [links] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [rel] => self
+                            [href] => https://api.payway.com.au/rest/v1/transactions/2667040226
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [rel] => void
+                            [href] => https://api.payway.com.au/rest/v1/transactions/2667040226/void
+                        )
+
+                )
+
+        )
+
+)
+
+
+ERROR
+
+array(2) {
+  ["code"]=>
+  int(422)
+  ["response"]=>
+  object(stdClass)#7681 (2) {
+    ["data"]=>
+    array(1) {
+      [0]=>
+      object(stdClass)#7680 (3) {
+        ["fieldName"]=>
+        string(10) "merchantId"
+        ["message"]=>
+        string(54) "This is not a valid value. Valid values are: 24222051."
+        ["fieldValue"]=>
+        string(6) "Q17533"
+      }
+    }
+    ["links"]=>
+    array(1) {
+      [0]=>
+      object(stdClass)#7684 (2) {
+        ["rel"]=>
+        string(4) "help"
+        ["href"]=>
+        string(53) "https://www.payway.com.au/docs/rest.html#transactions"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<extension key="com.osseed.payway" type="module">
+  <file>payway</file>
+  <name>PayWay Payment</name>
+  <description>PaywWay Payment Processor</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>OSSeed - Modified by Firefly</author>
+    <email>hello@osseed.com</email>
+  </maintainer>
+  <releaseDate>2014-01-26</releaseDate>
+  <version>1.1</version>
+  <develStage>alpha</develStage>
+  <compatibility>
+    <ver>4.2</ver>
+  </compatibility>
+  <comments>This extension module provides integration of CiviCRM with PaywWay Payment Processor</comments>
+  <civix>
+    <namespace>CRM/Payway</namespace>
+  </civix>
+</extension>
